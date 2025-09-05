@@ -1,4 +1,4 @@
-# SecOps & Governance - AWS 
+# SecOps & Governance - AWS  
 Progetto AWS su SecOps &amp; Governance 
 
 # 📌 Documentazione del Progetto Terraform
