@@ -1,11 +1,12 @@
-# SecOps & Governance - AWS  
-Progetto AWS su SecOps &amp; Governance 
+# Three-Tier-Web-Application - AWS  
+Progetto AWS su Architettura a 3 livelli
 
 # 📌 Documentazione del Progetto Terraform
 
 ## 📖 Introduzione
-Questo progetto utilizza **Terraform** per creare e gestire risorse su **AWS**, tra cui:
-- **VPC** con subnet pubbliche e private
+Questo progetto utilizza Terraform per creare e gestire un’infrastruttura a 3 livelli su AWS, progettata per scalabilità, sicurezza e resilienza.
+L’architettura include:
+- **Networking** VPC, Subnet pubbliche e private, IGW, NAT Gateway, Security Group, Route 53, Target Group 
 - **Istanza EC2**
 - **S3 Bucket per i backup**
 - **Gestione dei segreti con AWS Secrets Manager**
