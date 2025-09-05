@@ -41,14 +41,29 @@ source ~/.bashrc
 ## 📂 Struttura del Progetto
 ```
 /terraform-project
- ├── main.tf         # Configurazione principale di Terraform
- ├── variables.tf    # Dichiarazione delle variabili
- ├── network.tf      # Configurazione di VPC e subnet
- ├── istances.tf     # Creazione delle istanze EC2
- ├── iam.tf          # Configurazione IAM (ruoli e policy)
- ├── s3_bucket.tf    # Creazione di un bucket S3
- ├── secrets.tf      # Gestione dei segreti AWS
- ├── outputs.tf      # Output dei valori chiave
+ ├── Acm.tf         # Configurazione principale di Terraform
+ ├── Alb.tf    # Dichiarazione delle variabili
+ ├── Ami.tf      # Configurazione di VPC e subnet
+ ├── Asg.tf     # Creazione delle istanze EC2
+ ├── Aws Budget.tf          # Configurazione IAM (ruoli e policy)
+ ├── Backup.tf    # Creazione di un bucket S3
+ ├── Cloudfront.tf      # Gestione dei segreti AWS
+ ├── Ec2.tf      # Output dei valori chiave
+ ├── Iam.tf      # Gestione dei segreti AWS
+ ├── Kms.tf      # Gestione dei segreti AWS
+ ├── Launch_Template.tf      # Gestione dei segreti AWS
+ ├── Main.tf      # Gestione dei segreti AWS
+ ├── Providers.tf      # Gestione dei segreti AWS
+ ├── RDS.tf      # Gestione dei segreti AWS
+ ├── Route53.tf      # Gestione dei segreti AWS
+ ├── S3.tf      # Gestione dei segreti AWS
+ ├── Security Group.tf      # Gestione dei segreti AWS
+ ├── Sns.tf      # Gestione dei segreti AWS
+ ├── Target Group.tf      # Gestione dei segreti AWS
+ ├── Terraform.tfvars.tf      # Gestione dei segreti AWS
+ ├── Variables.tf      # Gestione dei segreti AWS
+ ├── Vpc.tf      # Gestione dei segreti AWS
+ ├── Waf.tf      # Gestione dei segreti AWS
  ├── .gitignore      # Evita di caricare file sensibili su GitHub
 ```
 
