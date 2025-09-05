@@ -1,45 +1,43 @@
-AWS Three-Tier Architecture - Terraform
+AWS Three-Tier Architecture
 
 Progetto AWS Architettura a 3 Livelli (Web, App, DB)
 
 📌 Documentazione del Progetto Terraform
-
 📖 Introduzione
 
-Questo progetto utilizza Terraform per creare un’infrastruttura a 3 livelli su AWS, con focus su scalabilità, sicurezza e disponibilità.
+Questo progetto utilizza Terraform per creare e gestire un’infrastruttura a 3 livelli su AWS, con focus su scalabilità, sicurezza e resilienza.
+
 L’architettura include:
 
-VPC con subnet pubbliche e private in più Availability Zones
+Networking: VPC, Subnet (pubbliche/private), IGW, NAT, Security Group, Route 53, Target Group
 
-Application Load Balancer (ALB) per bilanciare il traffico web
+Compute: Application Load Balancer (ALB), Auto Scaling Group + EC2 (web/app, Node.js/Express), AMI
 
-EC2 in Auto Scaling Group per livelli Web e App
+Database: Amazon RDS (MySQL) in Multi-AZ
 
-RDS MySQL in configurazione Multi-AZ per il livello Database
+Bilanciamento & Edge: ALB, CloudFront
 
-S3 per static assets e backup
+Storage/Content: S3 per backup e static assets, CloudFront per distribuzione globale
 
-CloudFront per distribuzione globale con caching
+Sicurezza: WAF, ACM (certificati SSL), KMS (encryption), IAM
 
-Route 53 per DNS e failover
+Monitoring & Disaster Recovery: AWS Backup, AWS Budget
 
-Sicurezza gestita con IAM, Security Groups e NACL
+Messaggistica: SNS per notifiche
 
 🛠️ Requisiti
 
 Prima di eseguire il progetto, assicurati di avere:
 
-Terraform
- installato
+Terraform installato → Download
 
-AWS CLI
- installata e configurata
+AWS CLI installato e configurato → Guida
 
-Credenziali AWS con permessi per creare risorse (IAM Administrator consigliato)
+Credenziali AWS con permessi sufficienti (IAM Administrator consigliato)
 
 🔧 Configurazione delle Variabili d'Ambiente
 
-Per evitare di salvare credenziali sensibili nei file Terraform, usa variabili d’ambiente.
+Per evitare di salvare le credenziali AWS nei file Terraform, utilizziamo variabili d'ambiente.
 
 Esegui questi comandi nel terminale:
 
@@ -48,7 +46,7 @@ export AWS_SECRET_ACCESS_KEY="TUA_SECRET_KEY"
 export AWS_DEFAULT_REGION="us-east-1"
 
 
-Se vuoi renderle permanenti:
+Se vuoi renderle permanenti, aggiungile a ~/.bashrc (Linux) o ~/.zshrc (macOS):
 
 echo 'export AWS_ACCESS_KEY_ID="TUA_ACCESS_KEY"' >> ~/.bashrc
 echo 'export AWS_SECRET_ACCESS_KEY="TUA_SECRET_KEY"' >> ~/.bashrc
@@ -57,39 +55,46 @@ source ~/.bashrc
 
 📂 Struttura del Progetto
 /three-tier-aws
- ├── main.tf               # Configurazione principale
+ ├── main.tf               # Configurazione principale di Terraform
  ├── providers.tf          # Provider AWS e alias multi-region
- ├── variables.tf          # Dichiarazione variabili
+ ├── variables.tf          # Dichiarazione delle variabili
  ├── vpc.tf                # Networking: VPC, subnet, IGW, NAT
- ├── security_groups.tf    # Configurazione Security Groups
+ ├── security_groups.tf    # Security Groups e NACL
  ├── alb.tf                # Application Load Balancer + Target Groups
- ├── asg.tf                # Auto Scaling Group + Launch Templates EC2
+ ├── asg.tf                # Auto Scaling Group + Launch Templates
  ├── rds.tf                # Database RDS MySQL
- ├── s3.tf                 # Bucket S3 (backup, static assets, logs)
- ├── route53.tf            # DNS e Health Checks
- ├── cloudfront.tf         # Distribuzione CloudFront
+ ├── s3.tf                 # Bucket S3 per backup e contenuti
+ ├── route53.tf            # DNS con Route 53
+ ├── cloudfront.tf         # Distribuzione globale con CloudFront
+ ├── waf.tf                # AWS WAF e regole
+ ├── kms.tf                # KMS per crittografia
+ ├── sns.tf                # Notifiche SNS
+ ├── backup.tf             # AWS Backup (policy e vault)
+ ├── budgets.tf            # AWS Budget per cost monitoring
  ├── outputs.tf            # Output dei valori chiave
  ├── terraform.tfvars      # Variabili personalizzate (NON caricare su GitHub)
  ├── .gitignore            # Esclude file sensibili e di stato
 
-🚀 Deploy dell’Infrastruttura
+🚀 Deploy dell'Infrastruttura
 
-Inizializza Terraform (scarica i provider):
+Dopo aver configurato le variabili d’ambiente, esegui i seguenti comandi:
+
+Inizializza Terraform
 
 terraform init
 
 
-Visualizza il piano di esecuzione:
+Visualizza il piano di esecuzione
 
 terraform plan
 
 
-Applica le configurazioni:
+Applica le configurazioni
 
 terraform apply
 
 
-Visualizza gli output:
+Visualizza gli output
 
 terraform output
 
@@ -101,7 +106,7 @@ terraform destroy
 
 🔒 File .gitignore
 
-Assicurati che il file .gitignore includa:
+Il file .gitignore deve includere:
 
 terraform.tfvars
 .terraform/
