@@ -6,11 +6,14 @@ Progetto AWS su Architettura a 3 livelli
 ## 📖 Introduzione
 Questo progetto utilizza Terraform per creare e gestire un’infrastruttura a 3 livelli su AWS, progettata per scalabilità, sicurezza e resilienza.
 L’architettura include:
-- **Networking** VPC, Subnet pubbliche e private, IGW, NAT Gateway, Security Group, Route 53, Target Group 
-- **Istanza EC2**
-- **S3 Bucket per i backup**
-- **Gestione dei segreti con AWS Secrets Manager**
-- **Sicurezza con IAM, Security Groups e Route Tables**
+- **Networking**: VPC, Subnet pubbliche e private, IGW, NAT Gateway, Security Group, Route 53, Target Group 
+- **Compute**: Application Load Balancer (ALB), Auto Scaling Group + EC2, AMI
+- **Database**: Amazon RDS (MySQL) Multi-AZ con replica cross-region
+- **Bilanciatori & Edge**: ALB e CloudFront per distribuzione globale
+- **Storage/Content**:S3 per static assets e backup, CloudFront per caching e CDN
+- **Sicurezza**: AWS WAF, ACM (SSL/TLS), KMS (encryption), IAM (least privilege)
+- **Monitoring & DR**: AWS Backup, AWS Budget, CloudWatch (metriche e allarmi)
+- **Messaggistica**: Amazon SNS per notifiche cross-region
 
 ## 🛠️ Requisiti
 Prima di eseguire il progetto, assicurati di avere:
