@@ -41,11 +41,11 @@ source ~/.bashrc
 ## 📂 Struttura del Progetto
 ```
 /terraform-project
- ├── Acm.tf         # Configurazione principale di Terraform
- ├── Alb.tf    # Dichiarazione delle variabili
- ├── Ami.tf      # Configurazione di VPC e subnet
+ ├── Acm.tf         # Gestisce i certificati
+ ├── Alb.tf    # Bilanciatore del carico 
+ ├── Ami.tf      # Immagini AMI per Ec2
  ├── Asg.tf     # Creazione delle istanze EC2
- ├── Aws Budget.tf          # Configurazione IAM (ruoli e policy)
+ ├── Aws Budget.tf  # Imposta limite di spesa
  ├── Backup.tf    # Creazione di un bucket S3
  ├── Cloudfront.tf      # Gestione dei segreti AWS
  ├── Ec2.tf      # Output dei valori chiave
