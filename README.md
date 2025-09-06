@@ -1,7 +1,7 @@
 # Three-Tier-Web-Application - AWS  
 Progetto AWS su Architettura a 3 livelli
 
-# 📌 Documentazione del Progetto Terraform
+# 📌 Documentazione
 
 ## 📖 Introduzione
 Questo progetto utilizza Terraform per creare e gestire un’infrastruttura a 3 livelli su AWS, progettata per scalabilità, sicurezza e resilienza.
