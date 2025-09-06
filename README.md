@@ -47,23 +47,23 @@ source ~/.bashrc
  ├── Asg.tf     # Creazione delle istanze EC2
  ├── Aws Budget.tf  # Imposta limite di spesa
  ├── Backup.tf    # Creazione di un bucket S3
- ├── Cloudfront.tf      # Gestione dei segreti AWS
- ├── Ec2.tf      # Output dei valori chiave
- ├── Iam.tf      # Gestione dei segreti AWS
- ├── Kms.tf      # Gestione dei segreti AWS
- ├── Launch_Template.tf      # Gestione dei segreti AWS
- ├── Main.tf      # Gestione dei segreti AWS
- ├── Providers.tf      # Gestione dei segreti AWS
- ├── RDS.tf      # Gestione dei segreti AWS
- ├── Route53.tf      # Gestione dei segreti AWS
- ├── S3.tf      # Gestione dei segreti AWS
- ├── Security Group.tf      # Gestione dei segreti AWS
- ├── Sns.tf      # Gestione dei segreti AWS
- ├── Target Group.tf      # Gestione dei segreti AWS
- ├── Terraform.tfvars.tf      # Gestione dei segreti AWS
- ├── Variables.tf      # Gestione dei segreti AWS
- ├── Vpc.tf      # Gestione dei segreti AWS
- ├── Waf.tf      # Gestione dei segreti AWS
+ ├── Cloudfront.tf      # CDN che distribuisce i contenuti con bassa latenza
+ ├── Ec2.tf      # Macchine Virtuali
+ ├── Iam.tf      # Ruoli e policy per dare permessi alle risorse)
+ ├── Kms.tf      # Chiavi di cifratura per dati in S3, RDS, EBS
+ ├── Launch_Template.tf      # Definisce come avviare le istanze: AMI, tipo, user_data
+ ├── Main.tf      # File principale che richiama e collega le risorse
+ ├── Providers.tf      # Specifica il provider Cloud da utilizzare e la regione
+ ├── RDS.tf      # Crea un Database gestito
+ ├── Route53.tf      # Gestisce i record DNS per i domini
+ ├── S3.tf      # Crea Bucket per file, log, siti statici, backup
+ ├── Security Group.tf      # Regole firewall: chi può accedere e su quali porte
+ ├── Sns.tf      # Invia notifiche via email o SMS
+ ├── Target Group.tf      # Insieme di istanze su cui l’ALB manda il traffico
+ ├── Terraform.tfvars.tf      # Dove inserisci i parametri reali, es. nome VPC, password DB
+ ├── Variables.tf      # Dichiarazione delle variabili con tipo e descrizione
+ ├── Vpc.tf      # Crea rete, subnet, gateway e routing
+ ├── Waf.tf      # Regole di protezione contro attacchi web
  ├── .gitignore      # Evita di caricare file sensibili su GitHub
 ```
 
