@@ -4,7 +4,7 @@ Progetto AWS su Architettura a 3 livelli
 # 📌 Documentazione
 
 ## 📖 Introduzione
-Questo progetto utilizza Terraform per creare e gestire un’infrastruttura a 3 livelli su AWS, progettata per scalabilità, sicurezza e resilienza.
+Questo progetto è pensato per creare e gestire un’infrastruttura a 3 livelli su AWS, progettata per scalabilità, sicurezza e resilienza.
 L’architettura include:
 - **Networking**: VPC, Subnet pubbliche e private, IGW, NAT Gateway, Security Group, Route 53, Target Group 
 - **Compute**: Application Load Balancer (ALB), Auto Scaling Group + EC2, AMI
