@@ -28,7 +28,6 @@ Esegui questi comandi nel terminale:
 ```sh
 export AWS_ACCESS_KEY_ID="TUA_ACCESS_KEY"
 export AWS_SECRET_ACCESS_KEY="TUA_SECRET_KEY"
-export AWS_DEFAULT_REGION="us-east-1"
 ```
 Se vuoi rendere queste variabili permanenti, aggiungile al file `~/.bashrc` (Linux) o `~/.zshrc` (macOS):
 ```sh
