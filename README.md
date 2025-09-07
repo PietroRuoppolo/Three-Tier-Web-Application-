@@ -33,7 +33,6 @@ Se vuoi rendere queste variabili permanenti, aggiungile al file `~/.bashrc` (Lin
 ```sh
 echo 'export AWS_ACCESS_KEY_ID="TUA_ACCESS_KEY"' >> ~/.bashrc
 echo 'export AWS_SECRET_ACCESS_KEY="TUA_SECRET_KEY"' >> ~/.bashrc
-echo 'export AWS_DEFAULT_REGION="us-east-1"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
