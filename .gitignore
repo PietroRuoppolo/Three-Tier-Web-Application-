@@ -1,0 +1,19 @@
+# File di stato Terraform
+terraform.tfstate
+terraform.tfstate.backup
+
+# Cartella con provider scaricati
+.terraform/
+
+# File variabili sensibili
+terraform.tfvars
+
+# File PEM (chiavi private)
+*.pem
+
+# File di log o temporanei
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
